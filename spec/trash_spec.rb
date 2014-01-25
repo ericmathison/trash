@@ -167,7 +167,7 @@ describe "Trash" do
     it "creates a trash can if one does not exist" do
       delete("/tmp/test_trash_can")
       File.exist?("/tmp/test_trash_can").should == false
-      oscar = Trash.new({:trash_can => "/tmp/test_trash_can"})
+      oscar = Trash.new(:trash_can => "/tmp/test_trash_can")
       File.exist?("/tmp/test_trash_can").should == true
       File.directory?("/tmp/test_trash_can").should == true
       delete("/tmp/test_trash_can")
